@@ -26,7 +26,7 @@ public class InputHandler : MonoBehaviour
     {
         if (IsTouchOnScreen())
         {
-            Debug.Log(GetTouchDeltaPosition());
+            //Debug.Log(GetTouchDeltaPosition());
         }
     }
 }

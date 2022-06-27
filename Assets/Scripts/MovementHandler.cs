@@ -7,12 +7,6 @@ public class MovementHandler : MonoBehaviour
 {
     public InputHandler inputHandler;
     [SerializeField] private float _ballSpeed = 1f;
-
-    private void Start()
-    {
-        
-    }
-
     private void Update()
     {
         MoveBall();

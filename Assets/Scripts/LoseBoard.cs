@@ -6,19 +6,24 @@ public class LoseBoard : MonoBehaviour
 {
     [SerializeField] private GameObject _loseImage;
     [SerializeField] private GameObject _overlay;
-    private void Start()
+    [SerializeField] private GameObject _winImage;
+    private void Awake()
     {
-        _loseImage = GameObject.Find("Lose");
+        _loseImage = LvlChange.instance.GetScreen(2);
+        _winImage = LvlChange.instance.GetScreen(1);
         _overlay = GameObject.Find("Overlay");
-        _loseImage.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("DeathBoard"))
         {
-            _loseImage.SetActive(true);
-            _overlay.SetActive(false);
+            if (!_winImage.activeSelf)
+            {
+                _loseImage.SetActive(true);
+                _overlay.SetActive(false);
+                gameObject.SetActive(false);
+            }
         }
     }
 }

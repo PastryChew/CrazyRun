@@ -21,9 +21,9 @@ public class ZoomTouch : MonoBehaviour
             }
             if (_tr < Vector2.Distance(_touchpos1, _touchpos2))
             {
-                Debug.Log("Жест увеличение");
+                //Debug.Log("Жест увеличение");
             }
-            else if (_tr > Vector2.Distance(_touchpos2, _touchpos1)) Debug.Log("Жест уменьшения");
+            //else if (_tr > Vector2.Distance(_touchpos2, _touchpos1)) //Debug.Log("Жест уменьшения");
         }
     }
 }

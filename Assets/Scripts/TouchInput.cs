@@ -15,7 +15,7 @@ public class TouchInput : MonoBehaviour
             {
                 _startPoint.x = touch.position.x;
                 _startPoint.y = touch.position.y;
-                Debug.Log("X: " + _startPoint.x + " Y: " + _startPoint.y);
+                //Debug.Log("X: " + _startPoint.x + " Y: " + _startPoint.y);
             }
             if (touch.deltaPosition.x > 0)
             {
@@ -26,11 +26,11 @@ public class TouchInput : MonoBehaviour
                     _endPoint -= _startPoint;
                     if (_endPoint.x > 100 && _endPoint.y <= 50)
                     {
-                        Debug.Log("Свайп вправо");
+                        //Debug.Log("Свайп вправо");
                     }
                     else
                     {
-                       Debug.Log("X2: " + _endPoint.x + " Y2: " + _endPoint.y);
+                      // Debug.Log("X2: " + _endPoint.x + " Y2: " + _endPoint.y);
                     }
                 }
             }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DontDestroy : MonoBehaviour
 {
@@ -8,10 +9,8 @@ public class DontDestroy : MonoBehaviour
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("UI");
 
-        if (objs.Length > 3)
-        {
+        if(objs.Length>1)
             Destroy(gameObject);
-        }
 
         DontDestroyOnLoad(gameObject);
     }

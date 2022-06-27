@@ -5,6 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class LvlChange : MonoBehaviour
 {
+    [SerializeField] private GameObject _winImage;
+    [SerializeField] private GameObject _loseImage;
+    public static LvlChange instance;
+    private void Awake()
+    {
+        if (!instance)
+            instance = this;
+    }
+    public GameObject GetScreen(int index)
+    {
+        if (index == 1)
+        {
+            return _winImage;
+        }
+        else
+        {
+            return _loseImage;
+        }
+    }
     public void LoadLevel(int _index)
     {
         if (SceneManager.GetActiveScene().buildIndex == _index)
@@ -19,7 +38,14 @@ public class LvlChange : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (SceneManager.GetActiveScene().buildIndex != 4)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
     }
     public void ReastartLvl()
     {
