@@ -7,12 +7,17 @@ public class LvlChange : MonoBehaviour
 {
     [SerializeField] private GameObject _winImage;
     [SerializeField] private GameObject _loseImage;
+    [SerializeField] private GameObject _overlayImage;
+    [SerializeField] private GameObject _backgrImage;
+    [SerializeField] private GameObject _backgrLvlImage;
+    [SerializeField] private Timer _timer;
     public static LvlChange instance;
     private void Awake()
     {
         if (!instance)
             instance = this;
     }
+
     public GameObject GetScreen(int index)
     {
         if (index == 1)
@@ -26,16 +31,21 @@ public class LvlChange : MonoBehaviour
     }
     public void LoadLevel(int _index)
     {
-        if (SceneManager.GetActiveScene().buildIndex == _index)
+        SceneManager.LoadScene(_index);
+        if (_index == 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            _backgrImage.SetActive(true);
+            _overlayImage.SetActive(false);
         }
-        else 
+        else
         {
-            SceneManager.LoadScene(_index);
+            _timer.StartTimer();
+            _backgrImage.SetActive(false);
+            _overlayImage.SetActive(true);
+            _backgrLvlImage.SetActive(false);
         }
+        
     }
-
     public void NextLevel()
     {
         if (SceneManager.GetActiveScene().buildIndex != 4)
@@ -50,6 +60,8 @@ public class LvlChange : MonoBehaviour
     public void ReastartLvl()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        _timer.StartTimer();
+        _loseImage.SetActive(false);
+        _overlayImage.SetActive(true);
     }
-
 }
