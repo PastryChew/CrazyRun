@@ -16,6 +16,7 @@ public class LvlChange : MonoBehaviour
     {
         if (!instance)
             instance = this;
+
     }
 
     public GameObject GetScreen(int index)

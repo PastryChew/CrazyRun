@@ -886,6 +886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _loseImage: {fileID: 0}
   _overlay: {fileID: 0}
+  _winImage: {fileID: 0}
 --- !u!114 &755379147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2472,6 +2473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _loseImage: {fileID: 0}
   _overlay: {fileID: 0}
+  _winImage: {fileID: 0}
 --- !u!114 &2101962146
 MonoBehaviour:
   m_ObjectHideFlags: 0
